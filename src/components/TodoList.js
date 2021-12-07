@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {Spinner} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import MyMap from "./MyMap";
+import {Typography} from '@mui/material'
 
 function TodoList(props) {
 
@@ -24,16 +26,27 @@ function TodoList(props) {
      }
     return (
         <div>
-            <p>TodoList Component</p>
+        <Typography component="h1" variant="h5">
+        To Dos List
+          </Typography>
+            
             {
                 todos.map((elem) => {
                     return (
                         <div>
                             <Link to={`/todo/${elem._id}`}>{elem.name}</Link>
-                        </div>    
+                        </div>  
+                        
+                        
                     )
                 })
+
+                
             }
+
+                <div> 
+                    <MyMap />
+                </div>
         </div>
     )
 }

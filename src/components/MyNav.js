@@ -13,16 +13,16 @@ return (
 		<Navbar.Toggle  aria-controls="basic-navbar-nav"  />
 		<Navbar.Collapse  id="basic-navbar-nav">
 			<Nav  className="mr-auto">
-				<Link  to="/">Todos</Link>
-				<Link  style={{marginLeft: '10px'}}  to="/add-form">Add Todo</Link>
+				<Link  style={{marginLeft: '10px'}} to="/">To Dos</Link>
+				<Link  style={{marginLeft: '10px'}}  to="/add-form">Add To Do</Link>
 				{
 					user ? (
 						<button onClick={props.onLogout}>Logout</button>
 					) : (
-						<>
-						<Link  style={{marginLeft: '10px'}}  to="/signin">SignIn</Link>
-						<Link  style={{marginLeft: '10px'}}  to="/signup">SignUp</Link>
-						</>
+						<Nav.Item className="justify-content-end" >
+						<Link  style={{marginLeft: '10px'}}  to="/signin">Sign In</Link>
+						<Link  style={{marginLeft: '10px'}}  to="/signup">Sign Up</Link>
+						</Nav.Item>
 					)
 				}
 			</Nav>

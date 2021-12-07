@@ -11,7 +11,7 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import {API_URL} from './config'
 import {UserContext} from './context/app.context'
-import MyMap from "./components/MyMap";
+
 
 function App(){
 
@@ -152,9 +152,10 @@ function App(){
   console.log('manishhhhh')
 	return (
 		<div>
-      <MyMap />
+      
       <MyNav onLogout={handleLogout} />
-			<h1>Shopping List</h1>
+			
+      {/* <MyMap /> */}
       <Routes>
           <Route path="/" element={<TodoList todos={todos} /> } />
           <Route path="/add-form" element={<AddForm btnSubmit={handleSubmit}/> } />
