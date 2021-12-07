@@ -6,16 +6,15 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+// import {Container, Typography, Box} from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import { API_URL } from '../config';
 
-
 const theme = createTheme();
 
 function SignUp(props) {
-
 
   const navigate = useNavigate()
 
@@ -30,7 +29,7 @@ function SignUp(props) {
     await axios.post(`${API_URL}/signup`, newUser, {withCredentials: true})  
     navigate('/signin')
   } 
-    
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -47,7 +46,7 @@ function SignUp(props) {
           <Typography component="h1" variant="h5">
             Sign Up
           </Typography>
-          <Box component="form" noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleSignUp} noValidate sx={{ mt: 1 }}>
             <TextField
                 margin="normal"
                 required
